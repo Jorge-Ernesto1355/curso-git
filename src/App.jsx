@@ -89,7 +89,7 @@ function App() {
                variants={variantLogin} className="block">
                <motion.div 
                 className="login">
-                    <h2>Login</h2>
+                    <h2>Logindddd</h2>
                     <div className='form'>
 
                     <input type="text" value={input.name} name="name" onChange={(e)=> Output(e)} />
