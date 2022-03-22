@@ -1,7 +1,8 @@
 import React,{useState, useEffect} from 'react'
 import './App.css'
 import axios from 'axios'
-import Product from './Product'
+
+import Product from './JorgeGuapo'
 const App = () => {
 
   const [products, setProducts] = useState([])
@@ -10,7 +11,7 @@ const App = () => {
   useEffect(()=>{
     const fetchApiProducts = async()=>{
       const data = await axios('https://tshirtdev.herokuapp.com/api/products')
-      setProducts(data)
+      setProducts(data.data)
     }
     fetchApiProducts()
   }, [])
