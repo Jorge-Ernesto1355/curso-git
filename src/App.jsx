@@ -3,15 +3,19 @@ import './App.css'
 import axios from 'axios'
 
 import Product from './JorgeGuapo'
+import Filters from './Filters'
 const App = () => {
 
   const [products, setProducts] = useState([])
-  console.log(products)
+  const [filters, setFilters] = useState([])
+  const [activeFilters, setActiveFilters] = useState('all')
+  
 
   useEffect(()=>{
     const fetchApiProducts = async()=>{
       const data = await axios('https://tshirtdev.herokuapp.com/api/products')
       setProducts(data.data)
+      setFilters(products) 
     }
     fetchApiProducts()
   }, [])
@@ -19,7 +23,12 @@ const App = () => {
   return (
   <div>
       <div className="products">
-        {products.map((product)=>(
+          <Filters
+           products={products}
+           activeFilters={activeFilters}
+           setFilters={setFilters}
+           setActiveFilters={setActiveFilters}/>
+        {filters.map((product)=>(
           <Product key={product.id} product={product}/>
         ))}
       </div>

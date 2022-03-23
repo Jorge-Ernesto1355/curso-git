@@ -1,0 +1,43 @@
+.filters {
+  display: flex;
+  align-items: center;
+  margin-bottom:20px ;
+}
+
+.filterButon{
+  padding: 8px 14px;
+  background-color: #fff;
+  color: rgba(82, 82, 194);
+  border-radius: 16px;
+  cursor: pointer;
+
+}
+
+.filtersButon.active {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: black;
+}
+ul, li{
+ list-style: none;
+}
+
+ul{
+  display: flex;
+  padding: 10px;
+}
+
+li{
+  margin-left: 10px;
+  background-color: gray;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+
+
+
+
